@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+  <meta charset="utf-8">
+  <title>Pokedex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+
+      function getPokemon(){
+
+       var x = fetch('https://pokeapi.co/api/v2/pokemon?limit=10')
+        .then(response => response.json())
+        .then( function(data){
+        console.log(data);
+        console.log(data.results[0].name);
+            return data.results[0].name
+        })
+
+        return x;
+      }
+    
+        var ditto = getPokemon();
+        document.write(ditto);
+        
+
+     
+  </script>
+</head>
+
+<body>
+    <nav>
+
+    </nav>
+    <article>
+        <section>
+            <div id = "pokedex">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+    </article>
+</body>
+</html>
